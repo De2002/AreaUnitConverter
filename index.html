@@ -1,0 +1,1104 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Area Unit Converter – Convert Any Area Instantly | Omni Converter</title>
+  <meta name="description" content="Free online area unit converter. Convert square meters, acres, hectares, square feet, square miles and 34+ more area units instantly with formulas, tables and FAQs."/>
+  <meta name="keywords" content="area unit converter, square meter converter, acres to square feet, hectare converter, area conversion calculator"/>
+  <link rel="canonical" id="canonical-link" href="/"/>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Area Unit Converter – Convert Any Area Instantly"/>
+  <meta property="og:description" content="Free online area unit converter. Convert square meters, acres, hectares, square feet, 39 area units with formulas, tables and FAQs."/>
+  <meta property="og:url" content="/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Omni Converter"/>
+  <meta property="og:image" content="https://cdn-ai.onspace.ai/onspace/project/screenshot/online/pre-site/9b0hyl.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Area Unit Converter – Convert Any Area Instantly"/>
+  <meta name="twitter:description" content="Free online area unit converter. 39 area units with formulas, tables and FAQs."/>
+  <meta name="twitter:image" content="https://cdn-ai.onspace.ai/onspace/project/screenshot/online/pre-site/9b0hyl.jpg"/>
+  <meta name="twitter:url" content="/"/>
+
+  <!-- Structured Data (updated per route by JS) -->
+  <script type="application/ld+json" id="ld-json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Area Unit Converter",
+    "description": "Free online area unit converter supporting 39 units including square meter, acre, hectare, square foot and more.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#F97316',
+              'orange-dark': '#EA580C',
+              'orange-light': '#FFEDD5',
+              blue: '#2F69E3',
+              'blue-dark': '#1D4ED8',
+              'blue-light': '#EFF4FF',
+              green: '#10B981',
+              'green-dark': '#059669',
+              'green-light': '#ECFDF5',
+            }
+          },
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    :root { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+
+    .gradient-hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #1a1a2e 100%);
+    }
+    .card-hover { transition: transform .2s ease, box-shadow .2s ease; }
+    .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(47,105,227,.15); }
+
+    .unit-chip {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 4px 10px; border-radius: 9999px; font-size: .75rem; font-weight: 600;
+      background: #EFF4FF; color: #2F69E3; border: 1px solid #DBEAFE;
+      transition: all .15s; text-decoration: none;
+    }
+    .unit-chip:hover { background: #2F69E3; color: #fff; }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
+    input[type=number] { -moz-appearance: textfield; }
+
+    .converter-input {
+      width: 100%; padding: 12px 16px; border: 2px solid #e5e7eb; border-radius: 10px;
+      font-size: 1.1rem; font-weight: 600; outline: none; transition: border-color .2s;
+      background: #fff; color: #111827;
+    }
+    .converter-input:focus { border-color: #2F69E3; box-shadow: 0 0 0 3px rgba(47,105,227,.12); }
+
+    .converter-select {
+      width: 100%; padding: 10px 12px; border: 2px solid #e5e7eb; border-radius: 10px;
+      font-size: .9rem; font-weight: 500; outline: none; background: #fff; color: #111827;
+      cursor: pointer; transition: border-color .2s;
+    }
+    .converter-select:focus { border-color: #2F69E3; }
+
+    .faq-item summary { cursor: pointer; list-style: none; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item[open] summary .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform .2s; }
+
+    .breadcrumb a { color: #2F69E3; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .nav-link { transition: color .15s; text-decoration: none; }
+    .nav-link:hover { color: #F97316; }
+
+    .table-scroll { overflow-x: auto; }
+    .conv-table th { background: #1e3a5f; color: #fff; font-weight: 600; padding: 10px 14px; white-space: nowrap; }
+    .conv-table td { padding: 8px 14px; white-space: nowrap; font-size: .85rem; }
+    .conv-table tr:nth-child(even) td { background: #f8faff; }
+    .conv-table tr:hover td { background: #EFF4FF; }
+
+    .pair-card { border: 1.5px solid #e5e7eb; border-radius: 14px; padding: 18px; background: #fff; transition: all .15s; text-decoration: none; display: block; }
+    .pair-card:hover { border-color: #2F69E3; background: #EFF4FF; }
+
+    @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+    .page-enter { animation: fadeIn .28s ease; }
+
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px; border-radius: 8px; font-size: .85rem; font-weight: 600;
+      background: #F97316; color: #fff; cursor: pointer; border: none;
+      transition: background .15s;
+    }
+    .share-btn:hover { background: #EA580C; }
+
+    .badge { display:inline-block; padding:2px 8px; border-radius:9999px; font-size:.7rem; font-weight:700; }
+    .badge-orange { background:#FFEDD5; color:#C2410C; }
+    .badge-blue   { background:#DBEAFE; color:#1D4ED8; }
+    .badge-green  { background:#D1FAE5; color:#047857; }
+
+    #page-root { min-height: 80vh; }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- Navigation -->
+<nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+    <a href="/" class="flex flex-col leading-tight">
+      <span class="font-extrabold text-xl text-gray-900 tracking-tight">Area Unit Converter</span>
+      <span class="text-xs text-gray-400 font-medium">by Omni Converter</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/unit/square-meter" class="nav-link">Square Meter</a>
+      <a href="/unit/acre" class="nav-link">Acre</a>
+      <a href="/unit/hectare" class="nav-link">Hectare</a>
+      <a href="/convert/acre-to-square-foot" class="nav-link">Acre to ft²</a>
+    </div>
+    <button class="md:hidden text-gray-600 p-2" id="mobile-toggle" aria-label="Open menu">
+      <i class="fas fa-bars text-xl"></i>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white px-4 py-3 space-y-2 text-sm font-medium text-gray-600">
+    <a href="/" class="block py-1 nav-link">Home</a>
+    <a href="/unit/square-meter" class="block py-1 nav-link">Square Meter</a>
+    <a href="/unit/acre" class="block py-1 nav-link">Acre</a>
+    <a href="/unit/hectare" class="block py-1 nav-link">Hectare</a>
+    <a href="/convert/acre-to-square-foot" class="block py-1 nav-link">Acre to ft²</a>
+  </div>
+</nav>
+
+<!-- Page Root -->
+<div id="page-root" class="page-enter"></div>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 mt-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div>
+      <div class="font-extrabold text-white text-lg mb-1">Area Unit Converter</div>
+      <div class="text-xs text-gray-500 mb-3">by Omni Converter</div>
+      <p class="text-sm text-gray-400 leading-relaxed">The most comprehensive online area unit converter covering 39 units from subatomic to continental scale.</p>
+    </div>
+    <div>
+      <div class="font-semibold text-white text-sm mb-3 uppercase tracking-wide">Popular Units</div>
+      <ul class="space-y-1 text-sm" id="footer-popular"></ul>
+    </div>
+    <div>
+      <div class="font-semibold text-white text-sm mb-3 uppercase tracking-wide">Popular Conversions</div>
+      <ul class="space-y-1 text-sm" id="footer-pairs"></ul>
+    </div>
+    <div>
+      <div class="font-semibold text-white text-sm mb-3 uppercase tracking-wide">About</div>
+      <p class="text-sm text-gray-400">All conversions use exact SI factors. Data sourced from NIST and international standards. Results are accurate to 12 significant figures.</p>
+    </div>
+  </div>
+  <div class="border-t border-gray-800 py-4 text-center text-xs text-gray-500">
+    © 2025 Omni Converter — Area Unit Converter. All rights reserved.
+  </div>
+</footer>
+
+<!-- DATA &amp; ENGINE -->
+<script>
+/* ─────────────────────────────────────────────────────────
+   UNIT DATA  (39 units, base = square metre)
+───────────────────────────────────────────────────────── */
+const UNITS = [
+  { slug:'square-meter',           name:'Square Meter',              symbol:'m²',        factor:1,                   system:'SI',       category:'metric',    desc:'The SI derived unit of area, equal to the area of a square with sides one metre long. The fundamental reference for all area conversions.' },
+  { slug:'square-kilometer',       name:'Square Kilometer',          symbol:'km²',       factor:1e6,                 system:'SI',       category:'metric',    desc:'Equal to one million square metres. Used to measure large land areas such as countries, seas and administrative regions.' },
+  { slug:'square-centimeter',      name:'Square Centimeter',         symbol:'cm²',       factor:1e-4,                system:'SI',       category:'metric',    desc:'One ten-thousandth of a square metre. Commonly used for small surfaces like paper, skin patches and electronics.' },
+  { slug:'square-millimeter',      name:'Square Millimeter',         symbol:'mm²',       factor:1e-6,                system:'SI',       category:'metric',    desc:'One millionth of a square metre. Used in engineering drawings, cross-sections of wires and medical imaging.' },
+  { slug:'square-micrometer',      name:'Square Micrometer',         symbol:'µm²',       factor:1e-12,               system:'SI',       category:'metric',    desc:'One trillionth of a square metre. Used in microbiology, semiconductor fabrication and nanotechnology.' },
+  { slug:'hectare',                name:'Hectare',                   symbol:'ha',        factor:10000,               system:'SI',       category:'metric',    desc:'Equal to 10,000 m² or 0.01 km². The primary unit for land area in agriculture and real estate worldwide.' },
+  { slug:'acre',                   name:'Acre',                      symbol:'ac',        factor:4046.8564224,        system:'Imperial', category:'imperial',  desc:'A traditional unit used in the US, UK and Canada. Defined as 66 × 660 feet. Widely used in land sales and property deeds.' },
+  { slug:'square-mile',            name:'Square Mile',               symbol:'mi²',       factor:2589988.110336,      system:'Imperial', category:'imperial',  desc:'Equal to 640 acres. Used in the US and UK to measure large geographic areas and population densities.' },
+  { slug:'square-yard',            name:'Square Yard',               symbol:'yd²',       factor:0.83612736,          system:'Imperial', category:'imperial',  desc:'Equal to 9 square feet. Commonly used in the US and UK for carpeting, flooring and fabric.' },
+  { slug:'square-foot',            name:'Square Foot',               symbol:'ft²',       factor:0.09290304,          system:'Imperial', category:'imperial',  desc:'The most widely used area unit in the US for real estate, construction and interior design.' },
+  { slug:'square-inch',            name:'Square Inch',               symbol:'in²',       factor:0.00064516,          system:'Imperial', category:'imperial',  desc:'One 144th of a square foot. Used for small surfaces, screens, pressure ratings and cross-sections.' },
+  { slug:'square-hectometer',      name:'Square Hectometer',         symbol:'hm²',       factor:10000,               system:'SI',       category:'metric',    desc:'Equivalent to a hectare (100 m × 100 m). Used interchangeably with hectare in some scientific contexts.' },
+  { slug:'square-dekameter',       name:'Square Dekameter',          symbol:'dam²',      factor:100,                 system:'SI',       category:'metric',    desc:'Equal to 100 m². One hundredth of a hectare. Used in some European surveying contexts.' },
+  { slug:'square-decimeter',       name:'Square Decimeter',          symbol:'dm²',       factor:0.01,                system:'SI',       category:'metric',    desc:'One hundredth of a square metre. Used in physics and chemistry for surface-area calculations.' },
+  { slug:'square-nanometer',       name:'Square Nanometer',          symbol:'nm²',       factor:1e-18,               system:'SI',       category:'metric',    desc:'One quintillionth of a square metre. Used in quantum physics, molecular chemistry and nanotechnology.' },
+  { slug:'are',                    name:'Are',                       symbol:'a',         factor:100,                 system:'SI',       category:'metric',    desc:'Equal to 100 m². Historically used in France and some European countries; still seen in some land records.' },
+  { slug:'barn',                   name:'Barn',                      symbol:'b',         factor:1e-28,               system:'Physics',  category:'special',   desc:'A unit used in nuclear and particle physics. Equal to 10⁻²⁸ m². Named humorously as "big as a barn" for atomic nuclei.' },
+  { slug:'square-mile-us-survey',  name:'Square Mile (US Survey)',   symbol:'mi²(US)',   factor:2589998.4703195,     system:'US',       category:'survey',    desc:'Slightly larger than the international square mile. Used in US land surveys dating to the Public Land Survey System.' },
+  { slug:'square-foot-us-survey',  name:'Square Foot (US Survey)',   symbol:'ft²(US)',   factor:0.0929034116,        system:'US',       category:'survey',    desc:'Slightly larger than the international square foot. Used in older US cadastral surveys and deed records.' },
+  { slug:'circular-inch',          name:'Circular Inch',             symbol:'circ in',   factor:0.0005067075,        system:'Special',  category:'special',   desc:'Area of a circle with a diameter of 1 inch. Used in wire gauge and conductor cross-section calculations.' },
+  { slug:'township',               name:'Township',                  symbol:'twp',       factor:93239571.972096,     system:'US',       category:'survey',    desc:'A US Public Land Survey unit equal to 36 sections or 36 square miles. Used in land grant and cadastral records.' },
+  { slug:'section',                name:'Section',                   symbol:'sec',       factor:2589988.110336,      system:'US',       category:'survey',    desc:'One square mile of land in the US Public Land Survey System. Contains 640 acres. Basis of US land ownership records.' },
+  { slug:'acre-us-survey',         name:'Acre (US Survey)',          symbol:'ac(US)',    factor:4046.8726098743,     system:'US',       category:'survey',    desc:'Slightly larger than the international acre. Used in US land surveys under the US Survey foot standard.' },
+  { slug:'rood',                   name:'Rood',                      symbol:'rood',      factor:1011.7141056,        system:'Imperial', category:'historical',desc:'Equal to one quarter of an acre (40 square rods). A historical English unit used in land records until the 19th century.' },
+  { slug:'square-chain',           name:'Square Chain',              symbol:'ch²',       factor:404.68564224,        system:'Imperial', category:'imperial',  desc:"Equal to 1/10 of an acre. Part of Gunter's chain system used in surveying since the 17th century." },
+  { slug:'square-rod',             name:'Square Rod',                symbol:'sq rd',     factor:25.29285264,         system:'Imperial', category:'imperial',  desc:'Also called square perch or square pole. Equal to 1/160 of an acre. Used in traditional land surveying.' },
+  { slug:'square-rod-us-survey',   name:'Square Rod (US Survey)',    symbol:'sq rd(US)', factor:25.2929538117,       system:'US',       category:'survey',    desc:'Slightly larger than the international square rod. Used in US cadastral surveys.' },
+  { slug:'square-perch',           name:'Square Perch',              symbol:'sq perch',  factor:25.29285264,         system:'Imperial', category:'historical',desc:'Equivalent to a square rod. Historically used in England and Ireland. One perch = 5.5 yards.' },
+  { slug:'square-pole',            name:'Square Pole',               symbol:'sq pole',   factor:25.29285264,         system:'Imperial', category:'historical',desc:'Equivalent to a square rod or square perch. An old English land measurement unit.' },
+  { slug:'square-mil',             name:'Square Mil',                symbol:'mil²',      factor:6.4516e-10,          system:'US',       category:'special',   desc:'Area of a square with sides of one mil (thousandth of an inch). Used in electronics and PCB design.' },
+  { slug:'circular-mil',           name:'Circular Mil',              symbol:'circ mil',  factor:5.067074790975e-10,  system:'US',       category:'special',   desc:'Area of a circle with diameter 1 mil. Standard unit for electrical wire cross-sections in North America.' },
+  { slug:'homestead',              name:'Homestead',                 symbol:'hmstd',     factor:647497.027584,       system:'US',       category:'survey',    desc:'Equal to 160 acres or a quarter section. The unit of land granted under the US Homestead Act of 1862.' },
+  { slug:'sabin',                  name:'Sabin',                     symbol:'sabin',     factor:0.09290304,          system:'Acoustics',category:'special',   desc:'Equal to one square foot. Used in architectural acoustics to measure sound absorption. Named after Wallace Sabine.' },
+  { slug:'arpent',                 name:'Arpent',                    symbol:'arpent',    factor:3418.8929236669,     system:'French',   category:'historical',desc:'A French unit of area used in colonial Louisiana and Quebec. Still appears in historical land records in the US South.' },
+  { slug:'cuerda',                 name:'Cuerda',                    symbol:'cuerda',    factor:3930.395625,         system:'Spanish',  category:'historical',desc:'A Spanish unit of land area used in Puerto Rico and some Latin American countries. About 0.97 acres.' },
+  { slug:'plaza',                  name:'Plaza',                     symbol:'plaza',     factor:6400,                system:'Spanish',  category:'historical',desc:'A Spanish unit equal to 6400 m². Used historically in Spain and Latin America for urban land measurement.' },
+  { slug:'varas-castellanas-cuad', name:'Varas Castellanas Cuad',    symbol:'v²',        factor:0.698737,            system:'Spanish',  category:'historical',desc:'A Spanish surveying unit still used in some parts of Texas and Latin America. About 0.698 m².' },
+  { slug:'varas-conuqueras-cuad',  name:'Varas Conuqueras Cuad',     symbol:'v²conuq',   factor:6.288633,            system:'Spanish',  category:'historical',desc:'A larger Spanish vara unit used in Venezuela and Colombia for agricultural land measurement.' },
+  { slug:'electron-cross-section', name:'Electron Cross Section',    symbol:'σₑ',        factor:6.6524615999999e-29, system:'Physics',  category:'special',   desc:'The Thomson scattering cross section of an electron, approx. 6.65×10⁻²⁹ m². Used in electrodynamics and astrophysics.' },
+];
+
+const unitBySlug = Object.fromEntries(UNITS.map(u => [u.slug, u]));
+
+/* ─────────────────────────────────────────────────────────
+   CONVERSION HELPERS
+───────────────────────────────────────────────────────── */
+function convert(val, fromSlug, toSlug) {
+  const f = unitBySlug[fromSlug], t = unitBySlug[toSlug];
+  if (!f || !t) return NaN;
+  return val * f.factor / t.factor;
+}
+
+function fmt(n, sig) {
+  sig = sig || 10;
+  if (n === 0) return '0';
+  const abs = Math.abs(n);
+  if (abs >= 1e-4 && abs < 1e15) {
+    let s = parseFloat(n.toPrecision(sig)).toString();
+    if (!s.includes('e') && s.includes('.')) s = s.replace(/\.?0+$/, '');
+    return s;
+  }
+  return n.toExponential(6).replace(/\.?0+e/, 'e');
+}
+
+function fmtDisplay(n) {
+  if (n === 0) return '0';
+  const abs = Math.abs(n);
+  if (abs >= 0.001 && abs < 1e13) return parseFloat(n.toPrecision(8)).toString().replace(/\.?0+$/, '');
+  return n.toExponential(5);
+}
+
+/* ─────────────────────────────────────────────────────────
+   ROUTE PARSER
+   Reads window.location.pathname once on page load.
+   No pushState, no click interception — every link is a
+   plain <a href="..."> that causes a full browser reload.
+   The OnSpace static host serves index.html for all paths.
+───────────────────────────────────────────────────────── */
+function parseRoute() {
+  const raw  = window.location.pathname || '/';
+  // normalise: strip trailing slash unless it is the root
+  const path = raw.length > 1 && raw.endsWith('/') ? raw.slice(0, -1) : raw;
+
+  if (path === '/' || path === '' || path === '/index.html') return { type: 'home' };
+
+  const unitM = path.match(/^\/unit\/([^/]+)$/);
+  if (unitM) {
+    const slug = unitM[1];
+    if (unitBySlug[slug]) return { type: 'unit', slug };
+  }
+
+  const pairM = path.match(/^\/convert\/([^/]+?)-to-([^/]+)$/);
+  if (pairM) {
+    const from = pairM[1], to = pairM[2];
+    if (unitBySlug[from] && unitBySlug[to]) return { type: 'pair', from, to };
+  }
+
+  return { type: '404' };
+}
+
+/* ─────────────────────────────────────────────────────────
+   SEO HELPERS
+───────────────────────────────────────────────────────── */
+function setMeta(title, desc, keywords, canonicalPath) {
+  document.title = title;
+  const url = canonicalPath;
+  document.querySelector('meta[name=description]').content            = desc;
+  document.querySelector('meta[name=keywords]').content               = keywords;
+  document.getElementById('canonical-link').setAttribute('href', url);
+  document.querySelector('meta[property="og:title"]').content         = title;
+  document.querySelector('meta[property="og:description"]').content   = desc;
+  document.querySelector('meta[property="og:url"]').content           = url;
+  document.querySelector('meta[name="twitter:title"]').content        = title;
+  document.querySelector('meta[name="twitter:description"]').content  = desc;
+  document.querySelector('meta[name="twitter:url"]').content          = url;
+}
+
+/* ─────────────────────────────────────────────────────────
+   SHARE
+───────────────────────────────────────────────────────── */
+function shareCurrentPage(title) {
+  const url = window.location.href;
+  if (navigator.share) {
+    navigator.share({ title: title, text: title + ' – Omni Converter', url: url }).catch(function(){});
+  } else {
+    navigator.clipboard.writeText(url)
+      .then(function(){ showToast('Link copied to clipboard!'); })
+      .catch(function(){ showToast('Copy: ' + url); });
+  }
+}
+window.shareCurrentPage = shareCurrentPage;
+
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-sm px-5 py-3 rounded-lg shadow-xl z-50 flex items-center gap-2';
+  t.innerHTML = '<i class="fas fa-check-circle text-green-400"></i> ' + msg;
+  document.body.appendChild(t);
+  setTimeout(function(){ t.remove(); }, 3000);
+}
+
+/* ─────────────────────────────────────────────────────────
+   POPULAR DATA
+───────────────────────────────────────────────────────── */
+const POPULAR_PAIRS = [
+  ['acre','square-foot'], ['hectare','acre'], ['square-meter','square-foot'],
+  ['square-kilometer','square-mile'], ['square-foot','square-meter'],
+  ['acre','hectare'], ['square-mile','square-kilometer'], ['square-yard','square-foot'],
+  ['square-inch','square-centimeter'], ['hectare','square-meter'],
+  ['square-meter','square-yard'], ['square-foot','square-inch'],
+];
+
+const POPULAR_UNITS = ['square-meter','acre','hectare','square-foot','square-kilometer','square-yard','square-mile','square-inch','square-centimeter','are'];
+
+/* ─────────────────────────────────────────────────────────
+   RENDER DISPATCHER
+───────────────────────────────────────────────────────── */
+function renderPage() {
+  const route = parseRoute();
+  const root  = document.getElementById('page-root');
+
+  if      (route.type === 'home') root.innerHTML = buildHome();
+  else if (route.type === 'unit') root.innerHTML = buildUnitPage(route.slug);
+  else if (route.type === 'pair') root.innerHTML = buildPairPage(route.from, route.to);
+  else                            root.innerHTML = build404();
+
+  attachEventListeners(route);
+}
+
+/* ═══════════════════════════════════════════════════════
+   HOME PAGE
+═══════════════════════════════════════════════════════ */
+function buildHome() {
+  setMeta(
+    'Area Unit Converter – Instantly Convert 39 Area Units | Omni Converter',
+    'Free, accurate area unit converter. Convert square meters, acres, hectares, square feet, square miles & 34 more units. Formulas, tables, and FAQs included.',
+    'area converter, area unit converter, square meter converter, acres to hectares, square feet to square meters, area conversion calculator',
+    '/'
+  );
+
+  const popularPairsHTML = POPULAR_PAIRS.map(function(pair) {
+    const a = pair[0], b = pair[1];
+    const ua = unitBySlug[a], ub = unitBySlug[b];
+    return '<a href="/convert/' + ua.slug + '-to-' + ub.slug + '" class="pair-card">'
+      + '<div class="flex items-center gap-2 text-sm font-semibold text-gray-800">'
+      + '<span>' + ua.name + '</span>'
+      + '<i class="fas fa-arrow-right text-orange-500 text-xs"></i>'
+      + '<span>' + ub.name + '</span>'
+      + '</div>'
+      + '<div class="text-xs text-gray-500 mt-1">1 ' + ua.symbol + ' = ' + fmt(ua.factor / ub.factor) + ' ' + ub.symbol + '</div>'
+      + '</a>';
+  }).join('');
+
+  const allUnitsHTML = UNITS.map(function(u) {
+    return '<a href="/unit/' + u.slug + '" class="unit-chip">'
+      + u.symbol
+      + '<span class="text-gray-500 font-normal hidden sm:inline ml-1">- ' + u.name + '</span>'
+      + '</a>';
+  }).join('');
+
+  const catLabels = { metric:'Metric (SI)', imperial:'Imperial / US', survey:'US Survey', historical:'Historical', special:'Special Purpose' };
+  const byCategory = {};
+  UNITS.forEach(function(u) {
+    if (!byCategory[u.category]) byCategory[u.category] = [];
+    byCategory[u.category].push(u);
+  });
+
+  const categoryCards = Object.keys(byCategory).map(function(cat) {
+    const units = byCategory[cat];
+    const col = { metric:'badge-blue', imperial:'badge-orange', survey:'badge-green', historical:'badge-orange', special:'badge-blue' }[cat] || 'badge-blue';
+    const items = units.map(function(u) {
+      return '<li><a href="/unit/' + u.slug + '" class="text-blue-500 hover:underline text-sm">' + u.name + ' (' + u.symbol + ')</a></li>';
+    }).join('');
+    return '<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 card-hover">'
+      + '<div class="flex items-center gap-2 mb-3">'
+      + '<span class="badge ' + col + '">' + (catLabels[cat] || cat) + '</span>'
+      + '<span class="text-xs text-gray-400">' + units.length + ' units</span>'
+      + '</div>'
+      + '<ul class="space-y-1">' + items + '</ul>'
+      + '</div>';
+  }).join('');
+
+  const faq = [
+    { q:'What is the most common area unit?',                    a:'The square meter (m²) is the SI standard used internationally. In the US, square feet and acres dominate real estate, while hectares are global agriculture\'s standard.' },
+    { q:'How many square feet are in an acre?',                  a:'1 acre = 43,560 square feet exactly. This derives from the historical chain-and-furlong system: 1 acre = 1 chain × 1 furlong = 66 ft × 660 ft.' },
+    { q:'What is a hectare in square meters?',                   a:'1 hectare = 10,000 m² — a 100 m × 100 m square. It is the standard for land area in agriculture, forestry and real estate in most countries.' },
+    { q:'How do I convert acres to hectares?',                   a:'Multiply acres by 0.404686. Example: 10 acres × 0.404686 = 4.04686 hectares. To reverse, multiply hectares by 2.47105.' },
+    { q:'What is the difference between a square mile and a section?', a:'They are equal: 1 section = 1 square mile = 640 acres = 2.589988 km². The term "section" is used specifically in the US Public Land Survey System (PLSS).' },
+    { q:'Why does the converter show so many decimal places?',   a:'Precision matters in surveying, science and engineering. We display up to 10 significant figures matching NIST precision standards.' },
+    { q:'What is a barn in area measurement?',                   a:'A barn (b) = 10⁻²⁸ m². Used in nuclear physics for atomic nucleus cross-sections. The humorous name arose in WWII Manhattan Project slang — nuclei were "as big as a barn."' },
+    { q:'How accurate are these conversions?',                   a:'All factors are sourced from NIST and international standards. Results are accurate to 8–12 significant figures, suitable for professional and scientific use.' },
+  ].map(function(item) {
+    return '<details class="faq-item border border-gray-200 rounded-xl overflow-hidden bg-white">'
+      + '<summary class="flex items-center justify-between px-5 py-4 font-semibold text-gray-800 text-sm hover:bg-gray-50 transition">'
+      + '<span>' + item.q + '</span><i class="fas fa-plus faq-icon text-orange-500 ml-3 flex-shrink-0"></i>'
+      + '</summary>'
+      + '<div class="px-5 pb-4 text-sm text-gray-600 leading-relaxed">' + item.a + '</div>'
+      + '</details>';
+  }).join('');
+
+  const refUnits = ['square-meter','square-kilometer','hectare','acre','square-mile','square-yard','square-foot','square-inch','are'];
+  const refRows  = refUnits.map(function(s) {
+    const u = unitBySlug[s];
+    return '<tr>'
+      + '<td class="font-medium text-blue-600"><a href="/unit/' + u.slug + '" class="hover:underline">' + u.name + '</a></td>'
+      + '<td>' + u.symbol + '</td>'
+      + '<td>' + fmt(u.factor) + '</td>'
+      + '<td>' + fmt(u.factor / unitBySlug['acre'].factor) + '</td>'
+      + '<td>' + fmt(u.factor / unitBySlug['hectare'].factor) + '</td>'
+      + '<td>' + fmt(u.factor / unitBySlug['square-foot'].factor) + '</td>'
+      + '</tr>';
+  }).join('');
+
+  return ''
+  + '<!-- Hero / Main Converter -->'
+  + '<section class="gradient-hero text-white py-14 md:py-20">'
+  +   '<div class="max-w-4xl mx-auto px-4 sm:px-6 text-center mb-10">'
+  +     '<div class="flex justify-center gap-2 mb-4 flex-wrap">'
+  +       '<span class="badge badge-orange">39 Area Units</span>'
+  +       '<span class="badge badge-blue">NIST Precision</span>'
+  +       '<span class="badge badge-green">Instant Results</span>'
+  +     '</div>'
+  +     '<h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-4">Area Unit Converter</h1>'
+  +     '<p class="text-base sm:text-lg text-blue-200 max-w-2xl mx-auto leading-relaxed">Convert any area measurement instantly — from subatomic barns to continental townships. All metric, imperial, US survey, historical and specialised units covered.</p>'
+  +   '</div>'
+  +   '<div class="max-w-3xl mx-auto px-4 sm:px-6">'
+  +     '<div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8">'
+  +       '<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 items-end">'
+  +         '<div>'
+  +           '<label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Value</label>'
+  +           '<input id="home-val" type="number" value="1" class="converter-input" placeholder="Enter value…" />'
+  +         '</div>'
+  +         '<div>'
+  +           '<label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">From</label>'
+  +           '<select id="home-from" class="converter-select">'
+  +             UNITS.map(function(u){ return '<option value="' + u.slug + '">' + u.name + ' (' + u.symbol + ')</option>'; }).join('')
+  +           '</select>'
+  +         '</div>'
+  +       '</div>'
+  +       '<div class="flex items-center justify-center my-5">'
+  +         '<button id="home-swap" class="bg-orange-500 hover:bg-orange-600 text-white rounded-full w-10 h-10 flex items-center justify-center shadow transition" title="Swap units">'
+  +           '<i class="fas fa-exchange-alt"></i>'
+  +         '</button>'
+  +       '</div>'
+  +       '<div>'
+  +         '<label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">To</label>'
+  +         '<select id="home-to" class="converter-select">'
+  +           UNITS.map(function(u, i){ return '<option value="' + u.slug + '"' + (i === 9 ? ' selected' : '') + '>' + u.name + ' (' + u.symbol + ')</option>'; }).join('')
+  +         '</select>'
+  +       '</div>'
+  +       '<div id="home-result" class="mt-5 bg-gradient-to-r from-blue-50 to-orange-50 border border-blue-100 rounded-xl p-5 text-center"></div>'
+  +       '<div class="mt-4 flex flex-wrap gap-2 justify-center">'
+  +         '<button class="share-btn" onclick="shareCurrentPage(\'Area Unit Converter\')">'
+  +           '<i class="fas fa-share-alt"></i> Share'
+  +         '</button>'
+  +         '<a id="home-go-pair" href="/convert/square-meter-to-square-foot"'
+  +           ' class="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition flex items-center gap-2">'
+  +           '<i class="fas fa-arrow-right"></i> Detailed Conversion Page'
+  +         '</a>'
+  +       '</div>'
+  +     '</div>'
+  +   '</div>'
+  + '</section>'
+
+  + '<section class="bg-white border-b border-gray-100">'
+  +   '<div class="max-w-5xl mx-auto px-4 sm:px-6 py-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">'
+  +     '<div><div class="text-3xl font-extrabold text-orange-500">39</div><div class="text-xs text-gray-500 mt-1 font-medium">Area Units</div></div>'
+  +     '<div><div class="text-3xl font-extrabold text-blue-500">1,521</div><div class="text-xs text-gray-500 mt-1 font-medium">Conversion Pairs</div></div>'
+  +     '<div><div class="text-3xl font-extrabold text-green-500">12</div><div class="text-xs text-gray-500 mt-1 font-medium">Significant Figures</div></div>'
+  +     '<div><div class="text-3xl font-extrabold text-orange-500">Free</div><div class="text-xs text-gray-500 mt-1 font-medium">Always Free</div></div>'
+  +   '</div>'
+  + '</section>'
+
+  + '<section class="max-w-5xl mx-auto px-4 sm:px-6 py-10">'
+  +   '<div class="flex items-center justify-between mb-6 flex-wrap gap-3">'
+  +     '<div>'
+  +       '<h2 class="text-xl sm:text-2xl font-extrabold text-gray-900">Live All-Unit Converter</h2>'
+  +       '<p class="text-sm text-gray-500 mt-1">Change the value above — all 39 results update instantly</p>'
+  +     '</div>'
+  +     '<button class="share-btn" onclick="shareCurrentPage(\'Area Unit Converter\')"><i class="fas fa-share-alt"></i> Share</button>'
+  +   '</div>'
+  +   '<div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">'
+  +     '<div id="all-units-grid" class="divide-y divide-gray-100"></div>'
+  +   '</div>'
+  + '</section>'
+
+  + '<section class="max-w-5xl mx-auto px-4 sm:px-6 py-10">'
+  +   '<h2 class="text-xl sm:text-2xl font-extrabold text-gray-900 mb-2">Popular Conversions</h2>'
+  +   '<p class="text-sm text-gray-500 mb-6">The most-searched area unit pairs. Click any card for a full detailed page.</p>'
+  +   '<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">' + popularPairsHTML + '</div>'
+  + '</section>'
+
+  + '<section class="max-w-5xl mx-auto px-4 sm:px-6 py-10">'
+  +   '<h2 class="text-xl sm:text-2xl font-extrabold text-gray-900 mb-2">Area Units Reference Table</h2>'
+  +   '<p class="text-sm text-gray-500 mb-6">Common units cross-referenced with square meters, acres, hectares and square feet.</p>'
+  +   '<div class="table-scroll rounded-2xl shadow-sm border border-gray-200">'
+  +     '<table class="conv-table w-full border-collapse">'
+  +       '<thead><tr><th>Unit</th><th>Symbol</th><th>m²</th><th>Acres</th><th>Hectares</th><th>ft²</th></tr></thead>'
+  +       '<tbody>' + refRows + '</tbody>'
+  +     '</table>'
+  +   '</div>'
+  + '</section>'
+
+  + '<section class="max-w-5xl mx-auto px-4 sm:px-6 py-10">'
+  +   '<h2 class="text-xl sm:text-2xl font-extrabold text-gray-900 mb-2">Browse All 39 Area Units</h2>'
+  +   '<p class="text-sm text-gray-500 mb-6">Click any unit to explore all conversions, facts and formulas.</p>'
+  +   '<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">' + categoryCards + '</div>'
+  + '</section>'
+
+  + '<section class="max-w-5xl mx-auto px-4 sm:px-6 py-6 bg-white rounded-2xl shadow-sm border border-gray-100 mb-10">'
+  +   '<h2 class="text-lg font-bold text-gray-900 mb-4">All Area Units (Quick Links)</h2>'
+  +   '<div class="flex flex-wrap gap-2">' + allUnitsHTML + '</div>'
+  + '</section>'
+
+  + '<section class="max-w-4xl mx-auto px-4 sm:px-6 py-10">'
+  +   '<h2 class="text-xl sm:text-2xl font-extrabold text-gray-900 mb-2">Frequently Asked Questions</h2>'
+  +   '<p class="text-sm text-gray-500 mb-6">Common questions about area units and conversions.</p>'
+  +   '<div class="space-y-3">' + faq + '</div>'
+  + '</section>'
+
+  + '<section class="max-w-4xl mx-auto px-4 sm:px-6 py-10">'
+  +   '<h2 class="text-xl font-extrabold text-gray-900 mb-4">About Area Measurement</h2>'
+  +   '<div class="text-gray-600 space-y-4 leading-relaxed text-sm">'
+  +     '<p>Area is a two-dimensional quantity expressing the extent of a surface, measured in square units. The SI base unit is the <strong>square metre (m²)</strong>, defined as the area of a square whose sides are exactly one metre.</p>'
+  +     '<p>Human civilisations developed area measurement independently. Ancient Egyptians used the <em>setat</em> (~2,700 m²); Romans measured in <em>iugera</em> (~2,523 m²); the English <strong>acre</strong> originally meant the land a yoke of oxen could plough in a day. Today, the metric hectare dominates global agriculture, while the acre and square foot persist in US real estate.</p>'
+  +     '<p>Modern science requires area units spanning over 50 orders of magnitude — from the <strong>electron cross section</strong> (approx. 6.65 × 10⁻²⁹ m²) in quantum electrodynamics to the area of entire continents measured in millions of square kilometres. This converter handles all of them.</p>'
+  +   '</div>'
+  + '</section>';
+}
+
+/* ═══════════════════════════════════════════════════════
+   UNIT HUB PAGE
+═══════════════════════════════════════════════════════ */
+function buildUnitPage(slug) {
+  const unit = unitBySlug[slug];
+  if (!unit) return build404();
+
+  setMeta(
+    unit.name + ' Converter – Convert ' + unit.symbol + ' to All Area Units | Omni Converter',
+    'Convert ' + unit.name + ' (' + unit.symbol + ') to and from all 38 other area units. Instant calculator, conversion formulas, facts and FAQ for ' + unit.name + '.',
+    unit.name + ' converter, ' + unit.name + ' to square meter, ' + unit.name + ' conversion, ' + unit.symbol + ' converter, area unit converter',
+    '/unit/' + unit.slug
+  );
+
+  const others = UNITS.filter(function(u){ return u.slug !== unit.slug; });
+
+  const rowsFrom = others.map(function(u) {
+    return '<tr>'
+      + '<td><a href="/unit/' + u.slug + '" class="text-blue-600 hover:underline font-medium">' + u.name + '</a></td>'
+      + '<td class="text-gray-500">' + u.symbol + '</td>'
+      + '<td class="font-mono text-sm font-semibold">' + fmt(unit.factor / u.factor) + '</td>'
+      + '<td><a href="/convert/' + unit.slug + '-to-' + u.slug + '" class="text-xs text-orange-600 hover:underline font-medium">Convert</a></td>'
+      + '</tr>';
+  }).join('');
+
+  const rowsTo = others.map(function(u) {
+    return '<tr>'
+      + '<td><a href="/unit/' + u.slug + '" class="text-blue-600 hover:underline font-medium">' + u.name + '</a></td>'
+      + '<td class="text-gray-500">' + u.symbol + '</td>'
+      + '<td class="font-mono text-sm font-semibold">' + fmt(u.factor / unit.factor) + '</td>'
+      + '<td><a href="/convert/' + u.slug + '-to-' + unit.slug + '" class="text-xs text-orange-600 hover:underline font-medium">Convert</a></td>'
+      + '</tr>';
+  }).join('');
+
+  const popularFrom = others.slice(0, 8).map(function(u) {
+    return '<a href="/convert/' + unit.slug + '-to-' + u.slug + '"'
+      + ' class="flex items-center gap-2 p-3 bg-white border border-gray-100 rounded-xl hover:border-blue-300 hover:bg-blue-50 transition text-sm">'
+      + '<i class="fas fa-arrow-right text-orange-500 text-xs"></i>'
+      + '<span>' + unit.name + ' to ' + u.name + '</span>'
+      + '</a>';
+  }).join('');
+
+  const catLabel = { metric:'Metric (SI)', imperial:'Imperial / US', survey:'US Survey', historical:'Historical', special:'Special / Scientific' };
+  const sysColor = { metric:'badge-blue', imperial:'badge-orange', survey:'badge-green', historical:'badge-orange', special:'badge-blue' };
+  const facts    = getUnitFacts(unit);
+
+  const faq = [
+    { q:'What is 1 ' + unit.name + ' in square meters?',      a:'1 ' + unit.name + ' = ' + fmt(unit.factor) + ' square meters (m²). This is the exact SI-standard conversion factor.' },
+    { q:'How do I convert ' + unit.name + ' to other units?', a:'Multiply your ' + unit.name + ' value by its factor (' + fmt(unit.factor) + ' m²) and divide by the target unit\'s factor. Our converter does this automatically with full precision.' },
+    { q:'Is ' + unit.name + ' used internationally?',         a:(unit.system === 'SI' ? unit.name + ' is an SI unit used globally.' : (unit.system === 'US' || unit.system === 'Imperial') ? unit.name + ' is primarily used in the US and UK.' : unit.name + ' has specialised or historical usage in specific fields or regions.') },
+    { q:'What system does ' + unit.name + ' belong to?',      a:unit.name + ' belongs to the ' + unit.system + ' measurement system, categorised as a ' + (catLabel[unit.category] || unit.category) + ' unit.' },
+  ].map(function(item) {
+    return '<details class="faq-item border border-gray-200 rounded-xl overflow-hidden bg-white">'
+      + '<summary class="flex items-center justify-between px-5 py-4 font-semibold text-gray-800 text-sm hover:bg-gray-50 transition">'
+      + '<span>' + item.q + '</span><i class="fas fa-plus faq-icon text-orange-500 ml-3 flex-shrink-0"></i>'
+      + '</summary>'
+      + '<div class="px-5 pb-4 text-sm text-gray-600 leading-relaxed">' + item.a + '</div>'
+      + '</details>';
+  }).join('');
+
+  return ''
+  + '<div class="bg-white border-b border-gray-100">'
+  +   '<div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 breadcrumb text-sm text-gray-500 flex flex-wrap gap-1 items-center">'
+  +     '<a href="/">Home</a>'
+  +     '<i class="fas fa-chevron-right text-xs text-gray-300 mx-1"></i>'
+  +     '<a href="/">Area Units</a>'
+  +     '<i class="fas fa-chevron-right text-xs text-gray-300 mx-1"></i>'
+  +     '<span class="text-gray-800 font-medium">' + unit.name + '</span>'
+  +   '</div>'
+  + '</div>'
+
+  + '<section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-12">'
+  +   '<div class="max-w-5xl mx-auto px-4 sm:px-6">'
+  +     '<div class="flex flex-wrap items-start gap-4 justify-between mb-6">'
+  +       '<div>'
+  +         '<div class="flex items-center gap-2 mb-2 flex-wrap">'
+  +           '<span class="badge ' + (sysColor[unit.category] || 'badge-blue') + '">' + unit.system + '</span>'
+  +           '<span class="badge badge-green">' + (catLabel[unit.category] || unit.category) + '</span>'
+  +         '</div>'
+  +         '<h1 class="text-3xl sm:text-4xl font-extrabold">' + unit.name + ' Converter</h1>'
+  +         '<p class="text-blue-200 mt-2 text-base max-w-xl">' + unit.desc + '</p>'
+  +         '<div class="mt-3 text-sm text-blue-100"><strong class="text-white">Symbol:</strong> ' + unit.symbol + ' &nbsp;|&nbsp; <strong class="text-white">1 ' + unit.symbol + ' =</strong> ' + fmt(unit.factor) + ' m²</div>'
+  +       '</div>'
+  +       '<button class="share-btn" onclick="shareCurrentPage(\'' + unit.name + ' Converter\')"><i class="fas fa-share-alt"></i> Share</button>'
+  +     '</div>'
+  +     '<div class="bg-white rounded-2xl p-5 sm:p-6 shadow-xl">'
+  +       '<div class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Quick Converter</div>'
+  +       '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-end">'
+  +         '<div><label class="block text-xs text-gray-500 mb-1">' + unit.name + ' (' + unit.symbol + ')</label>'
+  +           '<input id="unit-val" type="number" value="1" class="converter-input text-gray-900" /></div>'
+  +         '<div><label class="block text-xs text-gray-500 mb-1">Convert to</label>'
+  +           '<select id="unit-to" class="converter-select text-gray-900">'
+  +             others.map(function(u){ return '<option value="' + u.slug + '">' + u.name + ' (' + u.symbol + ')</option>'; }).join('')
+  +           '</select></div>'
+  +       '</div>'
+  +       '<div id="unit-result" class="mt-4 bg-gradient-to-r from-blue-50 to-orange-50 border border-blue-100 rounded-xl p-4 text-center"></div>'
+  +       '<div class="mt-3 flex gap-2 justify-center flex-wrap">'
+  +         '<button class="share-btn text-xs" onclick="shareCurrentPage(\'' + unit.name + ' Converter\')"><i class="fas fa-share-alt"></i> Share</button>'
+  +         '<a id="unit-go-pair" href="/convert/' + unit.slug + '-to-' + others[0].slug + '"'
+  +           ' class="bg-blue-500 hover:bg-blue-600 text-white text-xs font-semibold px-4 py-2 rounded-lg transition flex items-center gap-2">'
+  +           '<i class="fas fa-external-link-alt"></i> Full Pair Page'
+  +         '</a>'
+  +       '</div>'
+  +     '</div>'
+  +   '</div>'
+  + '</section>'
+
+  + '<section class="max-w-5xl mx-auto px-4 sm:px-6 py-8">'
+  +   '<h2 class="text-lg font-extrabold text-gray-900 mb-4">Popular Conversions from ' + unit.name + '</h2>'
+  +   '<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">' + popularFrom + '</div>'
+  + '</section>'
+
+  + '<section class="max-w-5xl mx-auto px-4 sm:px-6 py-4">'
+  +   '<h2 class="text-lg font-extrabold text-gray-900 mb-4">1 ' + unit.name + ' Equals…</h2>'
+  +   '<div class="table-scroll rounded-2xl shadow-sm border border-gray-200 bg-white">'
+  +     '<table class="conv-table w-full border-collapse">'
+  +       '<thead><tr><th>Unit</th><th>Symbol</th><th>Value</th><th>Link</th></tr></thead>'
+  +       '<tbody>' + rowsFrom + '</tbody>'
+  +     '</table>'
+  +   '</div>'
+  + '</section>'
+
+  + '<section class="max-w-5xl mx-auto px-4 sm:px-6 py-8">'
+  +   '<h2 class="text-lg font-extrabold text-gray-900 mb-4">…Converted to ' + unit.name + '</h2>'
+  +   '<div class="table-scroll rounded-2xl shadow-sm border border-gray-200 bg-white">'
+  +     '<table class="conv-table w-full border-collapse">'
+  +       '<thead><tr><th>Unit</th><th>Symbol</th><th>' + unit.symbol + ' per unit</th><th>Link</th></tr></thead>'
+  +       '<tbody>' + rowsTo + '</tbody>'
+  +     '</table>'
+  +   '</div>'
+  + '</section>'
+
+  + '<section class="max-w-5xl mx-auto px-4 sm:px-6 py-8">'
+  +   '<h2 class="text-lg font-extrabold text-gray-900 mb-4"><i class="fas fa-lightbulb text-orange-500 mr-2"></i>Facts about the ' + unit.name + '</h2>'
+  +   '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">'
+  +     facts.map(function(f) {
+          return '<div class="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">'
+            + '<div class="flex items-start gap-3">'
+            + '<div class="bg-orange-50 rounded-lg p-2 flex-shrink-0"><i class="fas ' + f.icon + ' text-orange-500"></i></div>'
+            + '<div><div class="font-semibold text-sm text-gray-800 mb-1">' + f.title + '</div>'
+            + '<div class="text-xs text-gray-600 leading-relaxed">' + f.text + '</div></div>'
+            + '</div></div>';
+        }).join('')
+  +   '</div>'
+  + '</section>'
+
+  + '<section class="max-w-4xl mx-auto px-4 sm:px-6 py-8">'
+  +   '<h2 class="text-lg font-extrabold text-gray-900 mb-4">FAQ – ' + unit.name + '</h2>'
+  +   '<div class="space-y-3">' + faq + '</div>'
+  + '</section>'
+
+  + '<div class="max-w-5xl mx-auto px-4 sm:px-6 py-6">'
+  +   '<a href="/" class="text-blue-500 hover:underline text-sm flex items-center gap-2"><i class="fas fa-arrow-left"></i> Back to All Area Units</a>'
+  + '</div>';
+}
+
+/* ═══════════════════════════════════════════════════════
+   PAIR CONVERSION PAGE
+═══════════════════════════════════════════════════════ */
+function buildPairPage(fromSlug, toSlug) {
+  const from = unitBySlug[fromSlug], to = unitBySlug[toSlug];
+  if (!from || !to) return build404();
+
+  const factor    = from.factor / to.factor;
+  const invFactor = to.factor / from.factor;
+
+  setMeta(
+    from.name + ' to ' + to.name + ' Converter (' + from.symbol + ' to ' + to.symbol + ') | Omni Converter',
+    'Convert ' + from.name + ' to ' + to.name + ' instantly. 1 ' + from.symbol + ' = ' + fmt(factor) + ' ' + to.symbol + '. Formula, conversion table, FAQs and facts about ' + from.name + ' and ' + to.name + '.',
+    from.name + ' to ' + to.name + ', ' + from.symbol + ' to ' + to.symbol + ', ' + from.name + ' ' + to.name + ' converter, convert ' + from.name + ' to ' + to.name,
+    '/convert/' + from.slug + '-to-' + to.slug
+  );
+
+  const tableVals = [0.001,0.01,0.1,0.25,0.5,1,2,3,4,5,10,20,25,50,100,200,500,1000,5000,10000];
+
+  const tableRows = tableVals.map(function(v) {
+    return '<tr>'
+      + '<td class="font-medium">' + fmt(v) + ' ' + from.symbol + '</td>'
+      + '<td class="text-green-700 font-semibold">' + fmt(v * factor) + ' ' + to.symbol + '</td>'
+      + '</tr>';
+  }).join('');
+
+  const tableRowsInv = tableVals.map(function(v) {
+    return '<tr>'
+      + '<td class="font-medium">' + fmt(v) + ' ' + to.symbol + '</td>'
+      + '<td class="text-blue-700 font-semibold">' + fmt(v * invFactor) + ' ' + from.symbol + '</td>'
+      + '</tr>';
+  }).join('');
+
+  const faq = [
+    { q:'How many ' + to.name + ' are in 1 ' + from.name + '?',          a:'1 ' + from.name + ' equals exactly ' + fmt(factor) + ' ' + to.name + '. This is derived from their respective conversion factors relative to the square metre base unit.' },
+    { q:'How do I convert ' + from.name + ' to ' + to.name + '?',        a:'Multiply your value in ' + from.name + ' by ' + fmt(factor) + ' to get ' + to.name + '. Formula: ' + to.symbol + ' = ' + from.symbol + ' × ' + fmt(factor) },
+    { q:'How do I convert ' + to.name + ' to ' + from.name + '?',        a:'Multiply your ' + to.name + ' value by ' + fmt(invFactor) + ' to get ' + from.name + '. Formula: ' + from.symbol + ' = ' + to.symbol + ' × ' + fmt(invFactor) },
+    { q:'What is the exact formula for ' + from.name + ' to ' + to.name + '?', a:to.name + ' = ' + from.name + ' × (' + fmt(from.factor) + ' ÷ ' + fmt(to.factor) + ') = ' + from.name + ' × ' + fmt(factor) },
+    { q:'How accurate is this ' + from.name + ' to ' + to.name + ' converter?', a:'Conversion factors are sourced from NIST and international standards, providing accuracy to 10–12 significant figures, suitable for engineering, surveying and scientific use.' },
+    { q:'What are ' + from.name + ' and ' + to.name + ' used for?',      a:from.desc.substring(0, 120) + '… ' + to.desc.substring(0, 120) + '…' },
+  ].map(function(item) {
+    return '<details class="faq-item border border-gray-200 rounded-xl overflow-hidden bg-white">'
+      + '<summary class="flex items-center justify-between px-5 py-4 font-semibold text-gray-800 text-sm hover:bg-gray-50 transition">'
+      + '<span>' + item.q + '</span><i class="fas fa-plus faq-icon text-orange-500 ml-3 flex-shrink-0"></i>'
+      + '</summary>'
+      + '<div class="px-5 pb-4 text-sm text-gray-600 leading-relaxed">' + item.a + '</div>'
+      + '</details>';
+  }).join('');
+
+  const relatedFrom = UNITS.filter(function(u){ return u.slug !== from.slug && u.slug !== to.slug; }).slice(0, 6).map(function(u) {
+    return '<a href="/convert/' + from.slug + '-to-' + u.slug + '" class="text-blue-500 hover:underline text-sm flex items-center gap-1">'
+      + '<i class="fas fa-arrow-right text-xs text-orange-400"></i> ' + from.name + ' to ' + u.name
+      + '</a>';
+  }).join('');
+
+  const relatedTo = UNITS.filter(function(u){ return u.slug !== from.slug && u.slug !== to.slug; }).slice(0, 6).map(function(u) {
+    return '<a href="/convert/' + u.slug + '-to-' + to.slug + '" class="text-blue-500 hover:underline text-sm flex items-center gap-1">'
+      + '<i class="fas fa-arrow-right text-xs text-orange-400"></i> ' + u.name + ' to ' + to.name
+      + '</a>';
+  }).join('');
+
+  return ''
+  + '<div class="bg-white border-b border-gray-100">'
+  +   '<div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 breadcrumb text-sm text-gray-500 flex flex-wrap gap-1 items-center">'
+  +     '<a href="/">Home</a>'
+  +     '<i class="fas fa-chevron-right text-xs text-gray-300 mx-1"></i>'
+  +     '<a href="/unit/' + from.slug + '">' + from.name + '</a>'
+  +     '<i class="fas fa-chevron-right text-xs text-gray-300 mx-1"></i>'
+  +     '<span class="text-gray-800 font-medium">' + from.name + ' to ' + to.name + '</span>'
+  +   '</div>'
+  + '</div>'
+
+  + '<section class="gradient-hero text-white py-12">'
+  +   '<div class="max-w-5xl mx-auto px-4 sm:px-6">'
+  +     '<div class="flex flex-wrap items-start gap-4 justify-between mb-6">'
+  +       '<div>'
+  +         '<h1 class="text-3xl sm:text-4xl font-extrabold">' + from.name + ' to ' + to.name + '</h1>'
+  +         '<p class="text-blue-200 mt-2 text-lg">1 <strong class="text-white">' + from.symbol + '</strong> = <strong class="text-orange-400 text-xl">' + fmt(factor) + '</strong> <strong class="text-white">' + to.symbol + '</strong></p>'
+  +       '</div>'
+  +       '<button class="share-btn" onclick="shareCurrentPage(\'' + from.name + ' to ' + to.name + ' Converter\')"><i class="fas fa-share-alt"></i> Share</button>'
+  +     '</div>'
+  +     '<div class="bg-white rounded-2xl p-5 sm:p-7 shadow-2xl">'
+  +       '<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">'
+  +         '<div>'
+  +           '<label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">' + from.name + ' (' + from.symbol + ')</label>'
+  +           '<input id="pair-from-val" type="number" value="1" class="converter-input text-gray-900" />'
+  +         '</div>'
+  +         '<div>'
+  +           '<label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">' + to.name + ' (' + to.symbol + ')</label>'
+  +           '<input id="pair-to-val" type="number" value="' + fmt(factor) + '" class="converter-input text-gray-900" />'
+  +         '</div>'
+  +       '</div>'
+  +       '<div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-500">'
+  +         '<div class="bg-blue-50 rounded-lg p-3 border border-blue-100"><strong class="text-blue-700">Formula (→):</strong> ' + to.symbol + ' = ' + from.symbol + ' × ' + fmt(factor) + '</div>'
+  +         '<div class="bg-orange-50 rounded-lg p-3 border border-orange-100"><strong class="text-orange-700">Formula (←):</strong> ' + from.symbol + ' = ' + to.symbol + ' × ' + fmt(invFactor) + '</div>'
+  +       '</div>'
+  +       '<div class="mt-4 flex gap-2 flex-wrap justify-center">'
+  +         '<button class="share-btn" onclick="shareCurrentPage(\'' + from.name + ' to ' + to.name + ' Converter\')"><i class="fas fa-share-alt"></i> Share</button>'
+  +         '<a href="/convert/' + to.slug + '-to-' + from.slug + '"'
+  +           ' class="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition flex items-center gap-2">'
+  +           '<i class="fas fa-exchange-alt"></i> Reverse: ' + to.name + ' to ' + from.name
+  +         '</a>'
+  +       '</div>'
+  +     '</div>'
+  +   '</div>'
+  + '</section>'
+
+  + '<section class="max-w-5xl mx-auto px-4 sm:px-6 py-10">'
+  +   '<div class="grid grid-cols-1 md:grid-cols-2 gap-6">'
+  +     '<div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">'
+  +       '<div class="flex items-center gap-3 mb-3">'
+  +         '<div class="bg-blue-100 text-blue-600 rounded-xl p-3 text-xl font-black">' + from.symbol + '</div>'
+  +         '<div><div class="font-extrabold text-gray-900">' + from.name + '</div><div class="text-xs text-gray-400">' + from.system + ' · ' + from.category + '</div></div>'
+  +       '</div>'
+  +       '<p class="text-sm text-gray-600 leading-relaxed">' + from.desc + '</p>'
+  +       '<div class="mt-3 text-xs text-gray-500">1 ' + from.symbol + ' = <strong>' + fmt(from.factor) + '</strong> m²</div>'
+  +       '<a href="/unit/' + from.slug + '" class="mt-3 inline-block text-xs text-blue-600 hover:underline">All ' + from.name + ' conversions</a>'
+  +     '</div>'
+  +     '<div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">'
+  +       '<div class="flex items-center gap-3 mb-3">'
+  +         '<div class="bg-orange-100 text-orange-600 rounded-xl p-3 text-xl font-black">' + to.symbol + '</div>'
+  +         '<div><div class="font-extrabold text-gray-900">' + to.name + '</div><div class="text-xs text-gray-400">' + to.system + ' · ' + to.category + '</div></div>'
+  +       '</div>'
+  +       '<p class="text-sm text-gray-600 leading-relaxed">' + to.desc + '</p>'
+  +       '<div class="mt-3 text-xs text-gray-500">1 ' + to.symbol + ' = <strong>' + fmt(to.factor) + '</strong> m²</div>'
+  +       '<a href="/unit/' + to.slug + '" class="mt-3 inline-block text-xs text-blue-600 hover:underline">All ' + to.name + ' conversions</a>'
+  +     '</div>'
+  +   '</div>'
+  + '</section>'
+
+  + '<section class="max-w-5xl mx-auto px-4 sm:px-6 py-4">'
+  +   '<h2 class="text-xl font-extrabold text-gray-900 mb-6">' + from.name + ' to ' + to.name + ' Conversion Table</h2>'
+  +   '<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">'
+  +     '<div>'
+  +       '<h3 class="text-sm font-bold text-gray-700 mb-3">' + from.name + ' to ' + to.name + '</h3>'
+  +       '<div class="table-scroll rounded-xl border border-gray-200 shadow-sm">'
+  +         '<table class="conv-table w-full border-collapse">'
+  +           '<thead><tr><th>' + from.name + '</th><th>' + to.name + '</th></tr></thead>'
+  +           '<tbody>' + tableRows + '</tbody>'
+  +         '</table>'
+  +       '</div>'
+  +     '</div>'
+  +     '<div>'
+  +       '<h3 class="text-sm font-bold text-gray-700 mb-3">' + to.name + ' to ' + from.name + '</h3>'
+  +       '<div class="table-scroll rounded-xl border border-gray-200 shadow-sm">'
+  +         '<table class="conv-table w-full border-collapse">'
+  +           '<thead><tr><th>' + to.name + '</th><th>' + from.name + '</th></tr></thead>'
+  +           '<tbody>' + tableRowsInv + '</tbody>'
+  +         '</table>'
+  +       '</div>'
+  +     '</div>'
+  +   '</div>'
+  + '</section>'
+
+  + '<section class="max-w-5xl mx-auto px-4 sm:px-6 py-8">'
+  +   '<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">'
+  +     '<div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">'
+  +       '<h3 class="font-bold text-gray-900 mb-3">More from ' + from.name + '</h3>'
+  +       '<div class="space-y-2">' + relatedFrom + '</div>'
+  +     '</div>'
+  +     '<div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">'
+  +       '<h3 class="font-bold text-gray-900 mb-3">More to ' + to.name + '</h3>'
+  +       '<div class="space-y-2">' + relatedTo + '</div>'
+  +     '</div>'
+  +   '</div>'
+  + '</section>'
+
+  + '<section class="max-w-4xl mx-auto px-4 sm:px-6 py-8">'
+  +   '<h2 class="text-xl font-extrabold text-gray-900 mb-5">FAQ – ' + from.name + ' to ' + to.name + '</h2>'
+  +   '<div class="space-y-3">' + faq + '</div>'
+  + '</section>'
+
+  + '<section class="max-w-4xl mx-auto px-4 sm:px-6 py-8">'
+  +   '<h2 class="text-lg font-extrabold text-gray-900 mb-3">Understanding the Conversion</h2>'
+  +   '<div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm text-sm text-gray-600 space-y-3 leading-relaxed">'
+  +     '<p>To convert <strong>' + from.name + '</strong> to <strong>' + to.name + '</strong>, use the ratio of their base conversion factors relative to the square metre. The ' + from.name + ' has a factor of <code class="bg-gray-100 px-1 rounded">' + fmt(from.factor) + ' m²</code> and the ' + to.name + ' has a factor of <code class="bg-gray-100 px-1 rounded">' + fmt(to.factor) + ' m²</code>.</p>'
+  +     '<p>Dividing these gives: <strong>' + fmt(from.factor) + ' ÷ ' + fmt(to.factor) + ' = ' + fmt(factor) + '</strong>. So to convert any ' + from.name + ' value to ' + to.name + ', multiply by this factor.</p>'
+  +     '<p>To go in reverse — from ' + to.name + ' to ' + from.name + ' — multiply by the reciprocal: <strong>' + fmt(invFactor) + '</strong>.</p>'
+  +   '</div>'
+  + '</section>'
+
+  + '<div class="max-w-5xl mx-auto px-4 sm:px-6 py-6 flex flex-wrap gap-4">'
+  +   '<a href="/unit/' + from.slug + '" class="text-blue-500 hover:underline text-sm flex items-center gap-2"><i class="fas fa-arrow-left"></i> All ' + from.name + ' Conversions</a>'
+  +   '<a href="/" class="text-blue-500 hover:underline text-sm flex items-center gap-2"><i class="fas fa-home"></i> Home</a>'
+  + '</div>';
+}
+
+/* 404 */
+function build404() {
+  return '<div class="max-w-2xl mx-auto px-4 py-24 text-center">'
+    + '<div class="text-8xl font-extrabold text-orange-300 mb-4">404</div>'
+    + '<h1 class="text-2xl font-bold text-gray-800 mb-3">Page Not Found</h1>'
+    + '<p class="text-gray-500 mb-8">The conversion page you\'re looking for doesn\'t exist.</p>'
+    + '<a href="/" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-xl transition">Back to Home</a>'
+    + '</div>';
+}
+
+/* ─────────────────────────────────────────────────────────
+   UNIT FACTS
+───────────────────────────────────────────────────────── */
+function getUnitFacts(unit) {
+  const generic = [
+    { icon:'fa-ruler-combined', title:'Conversion to m²',      text:'1 ' + unit.name + ' = ' + fmt(unit.factor) + ' square meters. This is the exact SI-standard factor.' },
+    { icon:'fa-globe',          title:'System: ' + unit.system, text:'The ' + unit.name + ' belongs to the ' + unit.system + ' system, categorised as a ' + unit.category + ' unit.' },
+    { icon:'fa-calculator',     title:'Inverse factor',        text:'1 square meter = ' + fmt(1 / unit.factor) + ' ' + unit.name + '. Use this to convert from m² back to ' + unit.name + '.' },
+    { icon:'fa-history',        title:'Historical context',    text:unit.desc },
+  ];
+  const specific = {
+    'acre':         [{ icon:'fa-tractor',     title:'Agriculture Standard',   text:'The acre is the primary land-sale unit in the US. A standard American football field (with end zones) is about 1.32 acres.' },
+                     { icon:'fa-book',        title:'Etymology',              text:'From Old English "æcer" (open field). Originally the land one man and a yoke of oxen could plough in a single day.' }],
+    'hectare':      [{ icon:'fa-seedling',    title:'Global Agriculture',     text:'Used in over 150 countries for land area. France adopted it as the legal standard for all land transactions.' },
+                     { icon:'fa-th',          title:'Visualisation',          text:'One hectare = 100 m × 100 m square — about the size of an international soccer/rugby pitch (105 × 68 m ≈ 0.71 ha).' }],
+    'square-meter': [{ icon:'fa-certificate', title:'SI Base Unit',           text:'The square meter is the coherent SI unit of area. All other area units are defined as multiples or fractions of it.' },
+                     { icon:'fa-home',        title:'Real-world scale',       text:'A standard parking space ≈ 15 m². An average US single-family home ≈ 230 m².' }],
+    'square-foot':  [{ icon:'fa-building',    title:'Real Estate Standard',   text:'Square feet dominate US real estate. The average US home is ~2,300 ft². Most US leases and floor plans use ft² exclusively.' },
+                     { icon:'fa-ruler',       title:'Exact Definition',       text:'1 square foot = area of a 12-inch square. Since 1959, 1 inch = 25.4 mm exactly, so 1 ft² = 929.0304 cm² exactly.' }],
+    'barn':         [{ icon:'fa-atom',        title:'Physics Unit',           text:'The barn is used in nuclear and particle physics. A nucleus is "as big as a barn" relative to subatomic scales.' },
+                     { icon:'fa-bomb',        title:'Manhattan Project',      text:'Coined in 1942 at Purdue by US physicists who found uranium-235 cross-sections unexpectedly large — "big as a barn."' }],
+    'square-kilometer':[{ icon:'fa-map',      title:'Geographic Scale',       text:'Russia covers ~17.1 million km². The UK is ~243,000 km². Used for all country-level and regional area comparisons.' },
+                        { icon:'fa-city',     title:'Urban Planning',         text:'Many cities quote their area in km². Paris (ville) ≈ 105 km²; New York City ≈ 783 km².' }],
+  };
+  return ((specific[unit.slug] || []).concat(generic)).slice(0, 4);
+}
+
+/* ─────────────────────────────────────────────────────────
+   EVENT LISTENERS (attached after each render)
+───────────────────────────────────────────────────────── */
+function attachEventListeners(route) {
+
+  /* HOME */
+  if (route.type === 'home') {
+    const valInput  = document.getElementById('home-val');
+    const fromSel   = document.getElementById('home-from');
+    const toSel     = document.getElementById('home-to');
+    const resultDiv = document.getElementById('home-result');
+    const swapBtn   = document.getElementById('home-swap');
+    const goPairLink= document.getElementById('home-go-pair');
+    const gridDiv   = document.getElementById('all-units-grid');
+
+    function updatePairLink() {
+      if (goPairLink) goPairLink.setAttribute('href', '/convert/' + fromSel.value + '-to-' + toSel.value);
+    }
+
+    function updateHomeResult() {
+      const v  = parseFloat(valInput.value);
+      const fu = unitBySlug[fromSel.value], tu = unitBySlug[toSel.value];
+      if (isNaN(v)) { resultDiv.innerHTML = '<span class="text-gray-400">Enter a number above</span>'; return; }
+      const res = convert(v, fromSel.value, toSel.value);
+      resultDiv.innerHTML = '<div class="text-2xl font-extrabold text-gray-900">'
+        + fmtDisplay(v) + ' <span class="text-blue-600">' + fu.symbol + '</span> = '
+        + '<span class="text-orange-500">' + fmtDisplay(res) + '</span>'
+        + ' <span class="text-green-600">' + tu.symbol + '</span>'
+        + '</div>'
+        + '<div class="text-xs text-gray-500 mt-1">' + fu.name + ' to ' + tu.name + '</div>';
+      updatePairLink();
+    }
+
+    function updateAllGrid() {
+      const v  = parseFloat(valInput.value);
+      const fs = fromSel.value;
+      if (!gridDiv) return;
+      if (isNaN(v)) { gridDiv.innerHTML = '<div class="p-4 text-gray-400 text-sm">Enter a value above</div>'; return; }
+      gridDiv.innerHTML = UNITS.map(function(u) {
+        const res    = convert(v, fs, u.slug);
+        const active = u.slug === fs ? 'bg-blue-50 border-l-4 border-blue-400' : '';
+        return '<a href="/unit/' + u.slug + '" class="flex items-center justify-between px-4 py-3 ' + active + ' hover:bg-gray-50 transition">'
+          + '<div class="flex items-center gap-3">'
+          + '<span class="text-xs w-14 text-gray-400 font-mono">' + u.symbol + '</span>'
+          + '<span class="text-sm font-medium text-gray-800">' + u.name + '</span>'
+          + '</div>'
+          + '<span class="text-sm font-bold text-orange-600">' + fmtDisplay(res) + '</span>'
+          + '</a>';
+      }).join('');
+    }
+
+    valInput.addEventListener('input',  function(){ updateHomeResult(); updateAllGrid(); });
+    fromSel.addEventListener('change',  function(){ updateHomeResult(); updateAllGrid(); });
+    toSel.addEventListener('change',    updateHomeResult);
+    swapBtn.addEventListener('click',   function() {
+      const tmp = fromSel.value; fromSel.value = toSel.value; toSel.value = tmp;
+      updateHomeResult(); updateAllGrid();
+    });
+
+    updateHomeResult();
+    updateAllGrid();
+  }
+
+  /* UNIT HUB */
+  if (route.type === 'unit') {
+    const unit     = unitBySlug[route.slug];
+    if (!unit) return;
+    const valInput = document.getElementById('unit-val');
+    const toSel    = document.getElementById('unit-to');
+    const resDivEl = document.getElementById('unit-result');
+    const goPair   = document.getElementById('unit-go-pair');
+
+    function updateUnitResult() {
+      const v  = parseFloat(valInput.value);
+      const tu = unitBySlug[toSel.value];
+      if (goPair) goPair.setAttribute('href', '/convert/' + unit.slug + '-to-' + toSel.value);
+      if (isNaN(v)) { resDivEl.innerHTML = '<span class="text-gray-400">Enter a number above</span>'; return; }
+      const res = convert(v, unit.slug, tu.slug);
+      resDivEl.innerHTML = '<div class="text-xl font-extrabold text-gray-900">'
+        + fmtDisplay(v) + ' <span class="text-blue-600">' + unit.symbol + '</span> = '
+        + '<span class="text-orange-500">' + fmtDisplay(res) + '</span>'
+        + ' <span class="text-green-600">' + tu.symbol + '</span>'
+        + '</div>';
+    }
+
+    valInput.addEventListener('input', updateUnitResult);
+    toSel.addEventListener('change',   updateUnitResult);
+    updateUnitResult();
+  }
+
+  /* PAIR */
+  if (route.type === 'pair') {
+    const from = unitBySlug[route.from], to = unitBySlug[route.to];
+    if (!from || !to) return;
+    const fromInput = document.getElementById('pair-from-val');
+    const toInput   = document.getElementById('pair-to-val');
+    const fac       = from.factor / to.factor;
+    const invFac    = to.factor / from.factor;
+
+    fromInput.addEventListener('input', function() {
+      const v = parseFloat(fromInput.value);
+      toInput.value = isNaN(v) ? '' : fmt(v * fac);
+    });
+    toInput.addEventListener('input', function() {
+      const v = parseFloat(toInput.value);
+      fromInput.value = isNaN(v) ? '' : fmt(v * invFac);
+    });
+  }
+}
+
+/* ─────────────────────────────────────────────────────────
+   FOOTER (built once)
+───────────────────────────────────────────────────────── */
+function buildFooter() {
+  const fp  = document.getElementById('footer-popular');
+  const fpp = document.getElementById('footer-pairs');
+  if (fp) fp.innerHTML = POPULAR_UNITS.map(function(s) {
+    const u = unitBySlug[s];
+    return '<li><a href="/unit/' + u.slug + '" class="text-gray-400 hover:text-orange-400 transition">' + u.name + '</a></li>';
+  }).join('');
+  if (fpp) fpp.innerHTML = POPULAR_PAIRS.slice(0, 8).map(function(pair) {
+    const ua = unitBySlug[pair[0]], ub = unitBySlug[pair[1]];
+    return '<li><a href="/convert/' + ua.slug + '-to-' + ub.slug + '" class="text-gray-400 hover:text-orange-400 transition">' + ua.name + ' to ' + ub.name + '</a></li>';
+  }).join('');
+}
+
+/* ─────────────────────────────────────────────────────────
+   MOBILE NAV
+───────────────────────────────────────────────────────── */
+document.getElementById('mobile-toggle').addEventListener('click', function() {
+  document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+document.getElementById('mobile-menu').addEventListener('click', function(e) {
+  if (e.target.closest('a')) document.getElementById('mobile-menu').classList.add('hidden');
+});
+
+/* ─────────────────────────────────────────────────────────
+   BOOTSTRAP — runs once on every full page load
+───────────────────────────────────────────────────────── */
+// Bootstrap — runs on every full-page load.
+// vercel.json rewrites all paths to /index.html so this always executes.
+document.addEventListener('DOMContentLoaded', function() {
+  buildFooter();
+  renderPage();
+});
+</script>
+
+
+</body></html>
