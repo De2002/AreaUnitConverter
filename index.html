@@ -203,7 +203,7 @@
   </div>
   <div class="border-t border-gray-800 py-4 text-center text-xs text-gray-500 flex flex-wrap items-center justify-center gap-4">
     <span>&copy; 2025 Omni Converter &mdash; Area Unit Converter. All rights reserved.</span>
-    <a href="/sitemap" class="text-gray-500 hover:text-orange-400 transition flex items-center gap-1"><i class="fas fa-sitemap"></i> Sitemap</a>
+    <a href="/sitemap.xml" class="text-gray-500 hover:text-orange-400 transition flex items-center gap-1" target="_blank" rel="noopener"><i class="fas fa-sitemap"></i> sitemap.xml</a>
   </div>
 </footer>
 
@@ -297,8 +297,6 @@ function parseRoute() {
   const path = raw.length > 1 && raw.endsWith('/') ? raw.slice(0, -1) : raw;
 
   if (path === '/' || path === '' || path === '/index.html') return { type: 'home' };
-  if (path === '/sitemap' || path === '/sitemap.html') return { type: 'sitemap' };
-
   const unitM = path.match(/^\/unit\/([^/]+)$/);
   if (unitM) {
     const slug = unitM[1];
@@ -374,14 +372,12 @@ function renderPage() {
   const route = parseRoute();
   const root  = document.getElementById('page-root');
 
-  if      (route.type === 'home')    root.innerHTML = buildHome();
-  else if (route.type === 'unit')    root.innerHTML = buildUnitPage(route.slug);
-  else if (route.type === 'pair')    root.innerHTML = buildPairPage(route.from, route.to);
-  else if (route.type === 'sitemap') root.innerHTML = buildSitemapPage();
-  else                               root.innerHTML = build404();
+  if      (route.type === 'home') root.innerHTML = buildHome();
+  else if (route.type === 'unit') root.innerHTML = buildUnitPage(route.slug);
+  else if (route.type === 'pair') root.innerHTML = buildPairPage(route.from, route.to);
+  else                            root.innerHTML = build404();
 
   attachEventListeners(route);
-  attachSitemapListeners(route);
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -966,9 +962,9 @@ function getUnitFacts(unit) {
 }
 
 /* ═══════════════════════════════════════════════════════
-   SITEMAP PAGE
+   SITEMAP PAGE — removed; served as static /sitemap.xml
 ═══════════════════════════════════════════════════════ */
-function buildSitemapPage() {
+function _unused_buildSitemapPage() {
   const baseUrl = window.location.origin;
 
   setMeta(
@@ -1220,9 +1216,9 @@ function attachEventListeners(route) {
 }
 
 /* ─────────────────────────────────────────────────────────
-   SITEMAP EVENT LISTENERS
+   SITEMAP EVENT LISTENERS — removed
 ───────────────────────────────────────────────────────── */
-function attachSitemapListeners(route) {
+function _unused_attachSitemapListeners(route) {
   if (route.type !== 'sitemap') return;
   const baseUrl = window.location.origin;
 
